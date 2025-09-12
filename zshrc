@@ -14,7 +14,6 @@ export SAVEHIST=1000000
 if [[ -n $SSH_CONNECTION ]]; then
 PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
 fi
-export SSLKEYLOGFILE=/var/tmp/.tlskeyfile
 
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
