@@ -2,6 +2,6 @@ confirm-close-surface = false
 font-family = JetBrains Mono NL
 font-size = 15
 macos-option-as-alt = left
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 
 window-inherit-working-directory = false

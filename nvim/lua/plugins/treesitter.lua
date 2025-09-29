@@ -1,27 +1,26 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  lazy = vim.fn.argc(-1) == 0,
-  event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-  init = function(plugin)
-    require("lazy.core.loader").add_to_rtp(plugin)
-    require("nvim-treesitter.query_predicates")
-  end,
-  opts = {
-    ensure_installed = { "bash", "go", "lua", "markdown_inline", "vim", "vimdoc" },
-    auto_install = true,
-    highlight = { enable = true },
-    indent = { enable = true },
-  },
-  config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
+  branch = "main",
+  build = ":TSUpdate",
+  lazy = false,
+  config = function()
+    local ts = require("nvim-treesitter")
+    ts.setup({})
+    local ensure_installed = { "bash", "go", "lua", "markdown_inline", "vim", "vimdoc" }
+    ts.install(vim.tbl_filter(function(lang)
+      return not vim.tbl_contains(ts.get_installed("parsers"), lang)
+    end, ensure_installed))
     vim.api.nvim_create_autocmd("FileType", {
-      callback = function()
-        if pcall(vim.treesitter.start) then
-          vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-          vim.opt_local.foldmethod = "expr"
+      callback = function(args)
+        local lang = vim.treesitter.language.get_lang(args.match)
+        if not vim.list_contains(ts.get_installed("parsers"), lang) then
+          return
         end
+        vim.treesitter.start()
+        vim.opt_local.foldmethod = "expr"
+        vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        vim.opt_local.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
       end,
     })
   end,
-  build = ":TSUpdate",
 }

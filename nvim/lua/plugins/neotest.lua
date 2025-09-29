@@ -7,7 +7,13 @@ return {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "fredrikaverpil/neotest-golang",
+      {
+        "fredrikaverpil/neotest-golang",
+        version = "*",
+        build = function()
+          vim.system({ "go", "install", "gotest.tools/gotestsum@latest" }):wait()
+        end,
+      },
     },
   --stylua: ignore
   keys = {
