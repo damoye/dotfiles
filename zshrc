@@ -10,6 +10,7 @@ alias vim="nvim"
 
 export HISTSIZE=1000000
 export SAVEHIST=1000000
+export EDITOR=nvim
 
 if [[ -n $SSH_CONNECTION ]]; then
 PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
