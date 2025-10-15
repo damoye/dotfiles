@@ -5,9 +5,10 @@ return {
     spec = {
       { "<Leader>a", group = "AI" },
       { "<Leader>d", group = "Debug" },
+      { "<Leader>f", group = "Find" },
       { "<Leader>g", group = "Git" },
       { "<Leader>o", group = "Overseer" },
-      { "<Leader>f", group = "Find" },
+      { "<Leader>p", group = "Preview" },
       { "<Leader>t", group = "Test" },
       { "<Leader>u", group = "UI" },
     },
