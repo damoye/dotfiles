@@ -1,11 +1,13 @@
 return {
   "yetone/avante.nvim",
-  event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-  version = "*",
+  event = { "VeryLazy" },
+  version = false,
+  ---@module 'avante'
   ---@type avante.Config
   opts = {
+    instructions_file = "avante.md",
     provider = "qianwen",
-    auto_suggestions_provider = "qianwen",
+    -- auto_suggestions_provider = "qianwen",
     providers = {
       qianwen = {
         __inherited_from = "openai",
@@ -15,7 +17,6 @@ return {
       },
     },
     file_selector = { provider = "snacks" },
-    -- behaviour = { enable_cursor_planning_mode = true },
   },
   build = "make",
   dependencies = {
