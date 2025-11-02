@@ -38,7 +38,6 @@ if [ ! -f ~/.fzf.zsh ]; then
   git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf && \
     ~/.fzf/install --bin
 fi
-source ~/.fzf.zsh
 
 export PATH=$PATH:$HOME/.cargo/bin
 if ! command -v rustc &> /dev/null; then
@@ -79,3 +78,8 @@ if ! command -v zellij &> /dev/null; then
   url=https://github.com/zellij-org/zellij/releases/download/v0.43.1/zellij-$os.tar.gz
   curl -fLo- $url | tar -xzf - -C ~/.local/bin zellij
 fi
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/mo/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

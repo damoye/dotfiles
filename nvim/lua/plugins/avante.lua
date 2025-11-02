@@ -15,7 +15,7 @@ return {
       },
     },
     file_selector = { provider = "snacks" },
-    behaviour = { enable_cursor_planning_mode = true },
+    -- behaviour = { enable_cursor_planning_mode = true },
   },
   build = "make",
   dependencies = {
