@@ -2,11 +2,17 @@ return {
   "brianhuster/live-preview.nvim",
   ft = { "markdown" },
   keys = {
-    { "<Leader>ps", "<cmd>LivePreview start<cr>", desc = "Preview Start" },
-    { "<Leader>pc", "<cmd>LivePreview close<cr>", desc = "Preview Close" },
-    { "<Leader>pp", "<cmd>LivePreview pick<cr>", desc = "Preview Pick" },
-  },
-  dependencies = {
-    "folke/snacks.nvim",
+    {
+      "<Leader>p",
+      function()
+        local lp = require("live-preview")
+        if lp.is_running() then
+          vim.cmd("LivePreview close")
+        else
+          vim.cmd("LivePreview start")
+        end
+      end,
+      desc = "Preview Toggle",
+    },
   },
 }

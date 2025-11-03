@@ -1,5 +1,5 @@
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   config = function()
     require("mason").setup()
     local mr = require("mason-registry")

@@ -3,7 +3,7 @@ return {
   dependencies = { "echasnovski/mini.icons" },
   event = "VeryLazy",
   opts = {
-    extensions = { "lazy", "mason", "nvim-dap-ui", "overseer", "quickfix" },
+    extensions = { "lazy", "mason", "nvim-dap-ui", "quickfix" },
     sections = {
       lualine_c = {
         { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },

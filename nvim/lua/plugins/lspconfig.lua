@@ -1,6 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
-  dependencies = { { "j-hui/fidget.nvim", opts = {} } },
+  dependencies = {
+    { "j-hui/fidget.nvim", opts = {} },
+    "mason-org/mason.nvim",
+  },
   config = function()
     vim.lsp.config("gopls", { settings = { gopls = { staticcheck = true, semanticTokens = true } } })
     vim.lsp.config("lua_ls", { settings = { Lua = { completion = { callSnippet = "Replace" } } } })
