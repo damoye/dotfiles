@@ -27,6 +27,8 @@ return {
         template = {
           prompt = function(context_before_cursor, context_after_cursor)
             return "<|fim_prefix|>"
+              .. require("minuet.utils").add_language_comment()
+              .. "\n"
               .. context_before_cursor
               .. "<|fim_suffix|>"
               .. context_after_cursor
