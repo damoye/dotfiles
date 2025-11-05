@@ -12,7 +12,7 @@ return {
           vim.cmd("LivePreview start")
         end
       end,
-      desc = "Preview Toggle",
+      desc = "Toggle Preview",
     },
   },
 }

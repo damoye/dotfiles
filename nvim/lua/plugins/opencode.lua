@@ -9,7 +9,7 @@ return {
       function()
         require("opencode").select()
       end,
-      desc = "Execute opencode action…",
+      desc = "AI Select",
       mode = { "n", "x" },
     },
     {
@@ -17,23 +17,7 @@ return {
       function()
         require("opencode").toggle()
       end,
-      desc = "Toggle opencode",
-      mode = { "n", "t" },
-    },
-    {
-      "<S-C-u>",
-      function()
-        require("opencode").command("session.half.page.up")
-      end,
-      desc = "opencode half page up",
-      mode = { "n", "t" },
-    },
-    {
-      "<S-C-d>",
-      function()
-        require("opencode").command("session.half.page.down")
-      end,
-      desc = "opencode half page down",
+      desc = "AI",
       mode = { "n", "t" },
     },
   },
