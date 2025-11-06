@@ -2,9 +2,9 @@ return {
   "stevearc/overseer.nvim",
   dependencies = { "nvim-lualine/lualine.nvim" },
   keys = {
-    { "<Leader>ow", "<Cmd>OverseerToggle<CR>", desc = "Overseer Toggle" },
-    { "<Leader>oo", "<Cmd>OverseerRun<CR>", desc = "Overseer Run" },
-    { "<Leader>ot", "<Cmd>OverseerTaskAction<CR>", desc = "Overseer Task action" },
+    { "<Leader>ow", "<Cmd>OverseerToggle<CR>", desc = "Toggle" },
+    { "<Leader>oo", "<Cmd>OverseerRun<CR>", desc = "Run" },
+    { "<Leader>ot", "<Cmd>OverseerTaskAction<CR>", desc = "Task action" },
     { "<Leader>ob", "<Cmd>OverseerRun gobuild<CR>", desc = "Go Build" },
     { "<Leader>or", "<Cmd>OverseerRun run<CR>", desc = "Run" },
   },

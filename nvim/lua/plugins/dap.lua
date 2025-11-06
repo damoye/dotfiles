@@ -17,7 +17,7 @@ return {
     { "<Leader>dj", function() require("dap").down() end, desc = "Down" },
     { "<Leader>dk", function() require("dap").up() end, desc = "Up" },
     { "<Leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-    { "<Leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    { "<Leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Hover" },
     { "<Leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
   },
   config = function()

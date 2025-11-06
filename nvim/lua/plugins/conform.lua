@@ -10,4 +10,17 @@ return {
       end
     end,
   },
+  config = function(_, opts)
+    require("conform").setup(opts)
+    vim.g.autoformat = true
+    Snacks.toggle({
+      name = "Auto Format",
+      get = function()
+        return vim.g.autoformat
+      end,
+      set = function(state)
+        vim.g.autoformat = state
+      end,
+    }):map("<Leader>uf")
+  end,
 }

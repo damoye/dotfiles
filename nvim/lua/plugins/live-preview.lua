@@ -1,18 +1,17 @@
 return {
   "brianhuster/live-preview.nvim",
   ft = { "markdown" },
-  keys = {
-    {
-      "<Leader>p",
-      function()
-        local lp = require("live-preview")
-        if lp.is_running() then
-          vim.cmd("LivePreview close")
-        else
+  config = function()
+    Snacks.toggle({
+      name = "Preview",
+      get = require("live-preview").is_running,
+      set = function(state)
+        if state then
           vim.cmd("LivePreview start")
+        else
+          vim.cmd("LivePreview close")
         end
       end,
-      desc = "Toggle Preview",
-    },
-  },
+    }):map("<Leader>p")
+  end,
 }

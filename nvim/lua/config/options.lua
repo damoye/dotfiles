@@ -1,4 +1,3 @@
-vim.g.autoformat = true
 vim.g.mapleader = " "
 vim.g.snacks_animate = false
 vim.opt.autowrite = true

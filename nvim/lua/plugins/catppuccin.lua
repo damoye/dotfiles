@@ -19,6 +19,7 @@ return {
         },
       },
       neotest = true,
+      neotree = true,
       overseer = true,
       semantic_tokens = true,
       snacks = true,

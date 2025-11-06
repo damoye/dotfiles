@@ -6,6 +6,7 @@ return {
     mr.refresh(function()
       local ensure_installed = {
         "gopls",
+        "gotestsum",
         "delve",
         "lua-language-server",
         "stylua",
