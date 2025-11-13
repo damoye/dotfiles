@@ -75,8 +75,9 @@ return {
     vim.api.nvim_create_autocmd("User", {
       pattern = "VeryLazy",
       callback = function()
-        Snacks.toggle.option("wrap", { name = "Wrap" }):map("<Leader>uw")
         Snacks.toggle.indent():map("<Leader>ug")
+        Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+        Snacks.toggle.option("wrap", { name = "Wrap" }):map("<Leader>uw")
       end,
     })
   end,
