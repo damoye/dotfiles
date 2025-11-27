@@ -11,6 +11,7 @@ return {
         "lua-language-server",
         "stylua",
         "shfmt",
+        "vtsls",
       }
       for _, tool in ipairs(ensure_installed) do
         local p = mr.get_package(tool)

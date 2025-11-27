@@ -7,7 +7,7 @@ return {
   config = function()
     vim.lsp.config("gopls", { settings = { gopls = { staticcheck = true, semanticTokens = true } } })
     vim.lsp.config("lua_ls", { settings = { Lua = { completion = { callSnippet = "Replace" } } } })
-    vim.lsp.enable({ "gopls", "lua_ls" })
+    vim.lsp.enable({ "gopls", "lua_ls", "vtsls" })
     vim.diagnostic.config({
       virtual_text = { source = "if_many" },
       signs = {
