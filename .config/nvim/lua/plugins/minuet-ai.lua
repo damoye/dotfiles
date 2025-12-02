@@ -7,7 +7,7 @@ return {
   event = "InsertEnter",
   opts = {
     virtualtext = {
-      auto_trigger_ft = { "*" },
+      -- auto_trigger_ft = { "*" },
       keymap = {
         accept = "<A-y>",
         accept_line = "<A-Y>",
