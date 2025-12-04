@@ -2,9 +2,9 @@ config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
 
 confirm-close-surface = false
 font-family = JetBrains Mono NL
-font-size = 15
+font-size = 14
 macos-option-as-alt = left
 shell-integration-features = ssh-env
-theme = Catppuccin Mocha
+theme = Kanagawa Wave
 window-inherit-working-directory = false
 window-theme = ghostty

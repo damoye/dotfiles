@@ -2,6 +2,7 @@
 brew install\
   fish\
   fzf\
+  ghostty\
   go\
   mysql\
   neovim\
