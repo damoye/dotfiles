@@ -1,5 +1,6 @@
 #!/bin/sh
 brew install\
+  fd\
   fish\
   fzf\
   ghostty\

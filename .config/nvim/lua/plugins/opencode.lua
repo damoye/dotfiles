@@ -9,7 +9,7 @@ return {
       function()
         require("opencode").select()
       end,
-      desc = "AI Select",
+      desc = "AI select",
       mode = { "n", "x" },
     },
     {

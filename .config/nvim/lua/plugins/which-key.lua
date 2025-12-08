@@ -5,6 +5,7 @@ return {
   opts = {
     preset = "helix",
     spec = {
+      { "gr", group = "LSP" },
       { "<Leader>c", group = "Code" },
       { "<Leader>d", group = "Debug" },
       { "<Leader>f", group = "Find" },

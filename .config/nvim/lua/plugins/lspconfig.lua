@@ -5,7 +5,15 @@ return {
     "mason-org/mason.nvim",
   },
   config = function()
-    vim.lsp.config("gopls", { settings = { gopls = { staticcheck = true, semanticTokens = true } } })
+    vim.lsp.config("gopls", {
+      settings = {
+        gopls = {
+          staticcheck = true,
+          semanticTokens = true,
+          codelenses = { test = true },
+        },
+      },
+    })
     vim.lsp.config("lua_ls", { settings = { Lua = { completion = { callSnippet = "Replace" } } } })
     vim.lsp.enable({ "gopls", "lua_ls", "vtsls" })
     vim.diagnostic.config({

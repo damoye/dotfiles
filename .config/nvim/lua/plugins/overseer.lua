@@ -5,7 +5,7 @@ return {
     { "<Leader>ow", "<Cmd>OverseerToggle<CR>", desc = "Toggle" },
     { "<Leader>oo", "<Cmd>OverseerRun<CR>", desc = "Run" },
     { "<Leader>ot", "<Cmd>OverseerTaskAction<CR>", desc = "Task action" },
-    { "<Leader>ob", "<Cmd>OverseerRun gobuild<CR>", desc = "Go Build" },
+    { "<Leader>ob", "<Cmd>OverseerRun gobuild<CR>", desc = "Go build" },
     { "<Leader>or", "<Cmd>OverseerRun run<CR>", desc = "Run" },
   },
   opts = {

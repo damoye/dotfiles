@@ -12,6 +12,7 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
+    explorer = {},
     indent = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },
@@ -34,9 +35,8 @@ return {
   },
   -- stylua: ignore
   keys = {
+    { "<leader>e", function() Snacks.explorer() end, desc = "Explorer"},
     { "<c-/>", function() Snacks.terminal() end, mode = {"n", "t"}, desc = "Terminal" },
-    { "gr", function() Snacks.picker.lsp_references() end, desc = "References"},
-    { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Implementations"},
     {
       "gR",
       function()
@@ -57,7 +57,7 @@ return {
     { "<Leader>fR", function() Snacks.picker.resume() end, desc = "Resume" },
 
     { "<Leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
-    { "<Leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+    { "<Leader>gs", function() Snacks.picker.git_status() end, desc = "Git status" },
 
     { "<Leader>n", function() Snacks.picker.notifications() end, desc = "Notifications" },
 
@@ -69,7 +69,7 @@ return {
     { "<Leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
 
     { "<Leader>uc", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
-    { "<Leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss Notifications" },
+    { "<Leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss notifications" },
   },
   init = function()
     vim.api.nvim_create_autocmd("User", {

@@ -4,7 +4,7 @@ return {
   config = function()
     local dashboard = require("alpha.themes.dashboard")
     dashboard.section.buttons.val = {
-      dashboard.button("n", "  New File", "<cmd>enew<cr>"),
+      dashboard.button("n", "  New", "<cmd>enew<cr>"),
       dashboard.button("f", "  Files", "<cmd>lua Snacks.picker.files({ root = false })<cr>"),
       dashboard.button("r", "  Recent", "<cmd>lua Snacks.picker.recent({ filter = { cwd = true }})<cr>"),
       dashboard.button("g", "  Grep", "<cmd>lua Snacks.picker.grep({ root = false })<cr>"),
