@@ -12,6 +12,7 @@ return {
         "stylua",
         "shfmt",
         "vtsls",
+        "tree-sitter-cli",
       }
       for _, tool in ipairs(ensure_installed) do
         local p = mr.get_package(tool)

@@ -11,5 +11,4 @@ brew install\
   ripgrep\
   starship\
   stow\
-  tree-sitter-cli\
   zellij
