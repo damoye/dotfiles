@@ -6,7 +6,7 @@ return {
   config = function()
     local ts = require("nvim-treesitter")
     ts.setup({})
-    local ensure_installed = { "bash", "go", "lua", "markdown_inline", "vim", "vimdoc" }
+    local ensure_installed = { "bash", "go", "lua", "markdown", "markdown_inline", "vim", "vimdoc" }
     ts.install(vim.tbl_filter(function(lang)
       return not vim.tbl_contains(ts.get_installed("parsers"), lang)
     end, ensure_installed))
@@ -16,7 +16,7 @@ return {
         if not vim.list_contains(ts.get_installed("parsers"), lang) then
           return
         end
-        vim.treesitter.start()
+        vim.treesitter.start(args.buf)
         vim.opt_local.foldmethod = "expr"
         vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
         vim.opt_local.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
