@@ -36,7 +36,10 @@ return {
   -- stylua: ignore
   keys = {
     { "<leader>e", function() Snacks.explorer() end, desc = "Explorer"},
+
     { "<c-/>", function() Snacks.terminal() end, mode = {"n", "t"}, desc = "Terminal" },
+
+    { "grr", function () Snacks.picker.lsp_references() end, desc = "References"},
     {
       "gR",
       function()
@@ -51,6 +54,9 @@ return {
       end,
       desc = "References exclude test",
     },
+    { "gri", function () Snacks.picker.lsp_implementations() end, desc = "implementation"},
+    { "gO", function() Snacks.picker.lsp_symbols() end, desc = "Symbols" },
+
     { "<Leader>ff", function() Snacks.picker.files({ root = false }) end, desc = "Files" },
     { "<Leader>fr", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent" },
     { "<Leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Config" },
@@ -65,8 +71,11 @@ return {
     { "<Leader>sG", function() Snacks.picker.grep({ root = false, exclude = {"*_test.go"} }) end, desc = "Grep exclude test" },
     { "<Leader>sw", function() Snacks.picker.grep_word({ root = false }) end, desc = "Word", mode = { "n", "x" } },
     { "<Leader>sW", function() Snacks.picker.grep_word({ root = false, exclude = {"*_test.go"} }) end, desc = "Word exclude test", mode = { "n", "x" } },
+
+    { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
     { "<Leader>sh", function() Snacks.picker.help() end, desc = "Helps" },
     { "<Leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+    { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix" },
 
     { "<Leader>uc", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
     { "<Leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss notifications" },

@@ -31,27 +31,33 @@ return {
     event = "VeryLazy",
     opts = { move = { set_jumps = true } },
     config = function(_, opts)
-      local TS = require("nvim-treesitter-textobjects")
-      TS.setup(opts)
+      require("nvim-treesitter-textobjects").setup(opts)
 
-      local function map(key, method, query)
+      local function map_move(key, method, query)
         local dir, pos = string.match(method, "[^_]+_([^_]+)_([^_]+)")
         dir = dir:sub(1, 1):upper() .. dir:sub(2)
-        local obj = query:gsub("@", ""):gsub("%..*", "")
-        local desc = dir .. " " .. obj .. " " .. pos
         vim.keymap.set({ "n", "x", "o" }, key, function()
           require("nvim-treesitter-textobjects.move")[method](query, "textobjects")
-        end, { desc = desc })
+        end, { desc = table.concat({ dir, query, pos }, " ") })
       end
-      map("]m", "goto_next_start", "@function.outer")
-      map("]M", "goto_next_end", "@function.outer")
-      map("[m", "goto_previous_start", "@function.outer")
-      map("[M", "goto_previous_end", "@function.outer")
+      map_move("]f", "goto_next_start", "@function.outer")
+      map_move("]F", "goto_next_end", "@function.outer")
+      map_move("[f", "goto_previous_start", "@function.outer")
+      map_move("[F", "goto_previous_end", "@function.outer")
+      map_move("]c", "goto_next_start", "@class.outer")
+      map_move("]C", "goto_next_end", "@class.outer")
+      map_move("[c", "goto_previous_start", "@class.outer")
+      map_move("[C", "goto_previous_end", "@class.outer")
 
-      map("]c", "goto_next_start", "@class.outer")
-      map("]C", "goto_next_end", "@class.outer")
-      map("[c", "goto_previous_start", "@class.outer")
-      map("[C", "goto_previous_end", "@class.outer")
+      local function map_select(key, query)
+        vim.keymap.set({ "x", "o" }, key, function()
+          require("nvim-treesitter-textobjects.select").select_textobject(query, "textobjects")
+        end, { desc = query })
+      end
+      map_select("af", "@function.outer")
+      map_select("if", "@function.inner")
+      map_select("ac", "@class.outer")
+      map_select("ic", "@class.inner")
     end,
   },
 }

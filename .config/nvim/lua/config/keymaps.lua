@@ -10,7 +10,8 @@ vim.keymap.set("n", "<A-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase w
 
 vim.keymap.set("n", "<ESC>", vim.cmd.nohlsearch, { desc = "Clear highlights" })
 vim.keymap.set("n", "<Leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
-vim.keymap.set("n", "<C-s>", vim.cmd.write, { desc = "Save file" })
+vim.keymap.set({ "n", "i" }, "<A-w>", vim.cmd.write, { desc = "Write" })
+vim.keymap.set({ "n", "i" }, "<A-q>", vim.cmd.quit, { desc = "Quit" })
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto definition" })
 vim.keymap.set("n", "grC", vim.lsp.codelens.refresh, { desc = "Refresh & Display codelens" })
@@ -30,4 +31,4 @@ vim.keymap.set("n", "<Leader>q", function()
   else
     vim.cmd.cclose()
   end
-end, { desc = "Toggle Quickfix" })
+end, { desc = "Toggle quickfix" })
