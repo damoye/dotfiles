@@ -5,6 +5,7 @@ sudo pacman -S\
   ghostty\
   go\
   opencode\
+  pay-respects\
   stow
 
 yay -S\

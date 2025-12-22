@@ -12,4 +12,5 @@ brew install\
   starship\
   stow\
   zellij\
-  mutagen-io/mutagen/mutagen
+  mutagen-io/mutagen/mutagen\
+  timescam/homebrew-tap/pay-respects

@@ -6,6 +6,8 @@ fzf --fish | source
 
 starship init fish | source
 
+pay-respects fish --alias | source
+
 function vim
   nvim $argv
 end
