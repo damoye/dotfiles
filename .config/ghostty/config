@@ -5,6 +5,6 @@ font-family = JetBrains Mono NL
 font-size = 14
 macos-option-as-alt = left
 shell-integration-features = ssh-env
-theme = Kanagawa Wave
+theme = Catppuccin Mocha
 window-inherit-working-directory = false
 window-theme = ghostty
