@@ -11,4 +11,5 @@ brew install\
   ripgrep\
   starship\
   stow\
-  zellij
+  zellij\
+  mutagen-io/mutagen/mutagen
