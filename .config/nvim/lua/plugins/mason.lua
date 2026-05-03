@@ -5,14 +5,17 @@ return {
     local mr = require("mason-registry")
     mr.refresh(function()
       local ensure_installed = {
+        "basedpyright",
+        "delve",
+        "golangci-lint",
         "gopls",
         "gotestsum",
-        "delve",
         "lua-language-server",
-        "stylua",
+        "ruff",
         "shfmt",
-        "vtsls",
+        "stylua",
         "tree-sitter-cli",
+        "vtsls",
       }
       for _, tool in ipairs(ensure_installed) do
         local p = mr.get_package(tool)

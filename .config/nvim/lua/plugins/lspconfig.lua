@@ -15,7 +15,9 @@ return {
       },
     })
     vim.lsp.config("lua_ls", { settings = { Lua = { completion = { callSnippet = "Replace" } } } })
-    vim.lsp.enable({ "gopls", "lua_ls", "vtsls" })
+    vim.lsp.enable({ "gopls", "lua_ls" })
+    -- vim.lsp.enable({ "gopls", "lua_ls", "ruff", "vtsls" })
+    -- vim.lsp.enable({ "basedpyright", "gopls", "lua_ls", "ruff", "vtsls" })
     vim.diagnostic.config({
       virtual_text = { source = "if_many" },
       signs = {

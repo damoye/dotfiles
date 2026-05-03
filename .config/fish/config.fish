@@ -11,3 +11,5 @@ pay-respects fish --alias | source
 function vim
   nvim $argv
 end
+
+fish_add_path ~/go/bin

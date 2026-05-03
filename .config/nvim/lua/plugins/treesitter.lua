@@ -10,7 +10,7 @@ return {
       local installed = TS.get_installed("parsers")
       TS.install(vim.tbl_filter(function(lang)
         return not vim.tbl_contains(installed, lang)
-      end, { "bash", "go", "lua", "markdown", "markdown_inline", "vim", "vimdoc" }))
+      end, { "bash", "go", "lua", "markdown", "markdown_inline", "python", "vim", "vimdoc", "yaml" }))
       vim.api.nvim_create_autocmd("FileType", {
         callback = function(args)
           local lang = vim.treesitter.language.get_lang(args.match)
